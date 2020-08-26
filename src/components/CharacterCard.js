@@ -34,6 +34,9 @@ const useStyles = makeStyles({
     flexDirection: "column",
     alignItems: "center",
     padding: "4px 15px"
+  },
+  name: {
+    color: "#E134A8"
   }
 });
 
@@ -49,7 +52,7 @@ const CharacterCard = ({ characterInfo }) => {
           title={`${characterInfo.name}`}
         />
         <CardContent className={classes.cardContent}>
-          <Typography gutterBottom variant="h6" component="h2">
+          <Typography gutterBottom variant="h6" component="h2" className={classes.name}>
             {`${characterInfo.name}`}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">

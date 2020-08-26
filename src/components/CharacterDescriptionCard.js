@@ -38,7 +38,11 @@ const useStyles = makeStyles({
     width: "100%",
     textAlign: "center",
     borderLeft: "2px solid #EA36AF",
-    borderRight: "2px solid #75FA69"
+    borderRight: "2px solid #75FA69",
+    '&::first-letter': {
+      color: "#FFFF00"
+    },
+    letterSpacing: "1px"
   }
 });
 
