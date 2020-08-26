@@ -4,6 +4,7 @@ import imagen from "./images/background2.jpg";
 import Header from "./components/Header";
 import Grid from "@material-ui/core/Grid";
 import CharacterCard from "./components/CharacterCard";
+import characterInfo from "./components/CharacterInfo";
 import axios from "axios";
 
 
@@ -13,6 +14,13 @@ const useStyles = makeStyles({
     overflowY: "auto",
     height: "600px",
   },
+  listLayout: {
+    display: "flex",
+    flexWrap: "wrap"
+  },
+  itemLayout: {
+    margin: "2%"
+  } 
 });
 
 function App() {
@@ -20,6 +28,7 @@ function App() {
 
   //estados
   const [characterList, setCharacterList] = useState([]);
+  const [characterInfo, setCharacterInfo] = useState([]);
 
   useEffect(() => {
     getCharacters();
@@ -42,25 +51,37 @@ function App() {
       });
   };
 
+
+  const handleShowCharacterInfo = (character) => {
+    setCharacterInfo([character]);
+
+  }
+
   return (
     <>
       <Header />
       <Grid container spacing={3} justify={"space-around"}>
-        <Grid item md={5} style={{ border: "1px solid green" }}></Grid>
+        <Grid item md={5} style={{ border: "1px solid green" }}>
+          
+        </Grid>
 
         <Grid
           className={classes.characterList}
           container
           item
           md={5}
-          style={{ border: "1px solid red" }}
           direction="row"
         >
+          <ul className={classes.listLayout}>
           {characterList.map( (character) => {
             return (
-              <CharacterCard key={character.id} characterInfo={character} />
+              
+                <li className={classes.itemLayout} key={character.id} onClick={() => handleShowCharacterInfo(character)}>
+                  <CharacterCard characterInfo={character} />
+                </li>
             )
           })}
+          </ul>
         </Grid>
       </Grid>
     </>

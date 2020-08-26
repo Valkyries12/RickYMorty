@@ -12,6 +12,7 @@ const useStyles = makeStyles({
     minWidth: "200px",
     maxWidth: "200px",
     backgroundColor: "transparent",
+    margin: "3%",
     boxShadow: "0 5px 15px 0 hsla(0,0%,100%,.4)",
     textShadow: "0.5px 0 0 #ea36af, -1px 0 0 #75fa69",
   },
@@ -37,7 +38,7 @@ const useStyles = makeStyles({
   }
 });
 
-const CharacterCard = ({ characterInfo }) => {
+const CharacterInfo = ({ characterInfo }) => {
   const classes = useStyles();
 
   return (
@@ -62,4 +63,4 @@ const CharacterCard = ({ characterInfo }) => {
   );
 }
 
-export default CharacterCard;
+export default CharacterInfo;
