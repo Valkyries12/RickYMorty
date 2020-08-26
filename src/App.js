@@ -4,8 +4,9 @@ import imagen from "./images/background2.jpg";
 import Header from "./components/Header";
 import Grid from "@material-ui/core/Grid";
 import CharacterCard from "./components/CharacterCard";
-import characterInfo from "./components/CharacterInfo";
+import characterDescriptionCard from "./components/CharacterDescriptionCard";
 import axios from "axios";
+import CharacterDescriptionCard from "./components/CharacterDescriptionCard";
 
 
 const useStyles = makeStyles({
@@ -19,8 +20,8 @@ const useStyles = makeStyles({
     flexWrap: "wrap"
   },
   itemLayout: {
-    margin: "2%"
-  } 
+    margin: "2%",
+  },
 });
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
 
   //estados
   const [characterList, setCharacterList] = useState([]);
-  const [characterInfo, setCharacterInfo] = useState([]);
+  const [characterInfo, setCharacterInfo] = useState();
 
   useEffect(() => {
     getCharacters();
@@ -61,8 +62,13 @@ function App() {
     <>
       <Header />
       <Grid container spacing={3} justify={"space-around"}>
-        <Grid item md={5} style={{ border: "1px solid green" }}>
-          
+        <Grid item md={5}>
+          {characterInfo ? (
+            <CharacterDescriptionCard  characterInfo={characterInfo}/>
+            
+          ) : <div></div>
+
+          }
         </Grid>
 
         <Grid
