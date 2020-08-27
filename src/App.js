@@ -7,6 +7,7 @@ import CharacterCard from "./components/CharacterCard";
 import characterDescriptionCard from "./components/CharacterDescriptionCard";
 import axios from "axios";
 import CharacterDescriptionCard from "./components/CharacterDescriptionCard";
+import cursorImage from "./images/cursor.png";
 
 
 const useStyles = makeStyles({
@@ -24,9 +25,9 @@ const useStyles = makeStyles({
       backgroundColor: "#75FA69"
     },
     scrollbarColor: "#75FA69 transparent", /* thumb and track color */
-    scrollbarWidth: "thin"
-    
-  },
+    scrollbarWidth: "thin",
+    cursor: `url(${cursorImage}), auto`,
+  },  
   listLayout: {
     display: "flex",
     flexWrap: "wrap"
@@ -73,7 +74,7 @@ function App() {
   return (
     <>
       <Header />
-      <Grid container spacing={3} justify={"space-around"}>
+      <Grid container spacing={3} justify={"space-around"} style={{border: "1px solid green"}}>
         <Grid item md={5}>
           {characterInfo ? (
             <CharacterDescriptionCard  characterInfo={characterInfo}/>

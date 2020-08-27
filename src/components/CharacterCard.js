@@ -6,6 +6,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import cursorImage from "../images/cursor.png";
 
 const useStyles = makeStyles({
   root: {
@@ -14,17 +15,20 @@ const useStyles = makeStyles({
     backgroundColor: "transparent",
     boxShadow: "0 5px 15px 0 hsla(0,0%,100%,.4)",
     textShadow: "0.5px 0 0 #ea36af, -1px 0 0 #75fa69",
+    cursor: `url(${cursorImage}), auto`,
   },
   media: {
     height: "150px",
     width: "150px",
-    borderRadius: "50%"
+    borderRadius: "50%",
+    cursor: `url(${cursorImage}), auto`,
   },
   cardActionArea: {
     alignContent: "center",
     display: "flex",
     flexDirection: "column",
     padding: "2px",
+    cursor: `url(${cursorImage}), auto`,
   },
   cardContent: {
     borderRadius: "6px",
@@ -33,7 +37,8 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "4px 15px"
+    padding: "4px 15px",
+    cursor: `url(${cursorImage}), auto`,
   },
   name: {
     color: "#E134A8"
