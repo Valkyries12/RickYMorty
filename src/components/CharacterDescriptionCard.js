@@ -43,6 +43,9 @@ const useStyles = makeStyles({
       color: "#FFFF00"
     },
     letterSpacing: "1px"
+  },
+  info: {
+    color: "#461034"
   }
 });
 
@@ -61,16 +64,16 @@ const CharacterDescriptionCard = ({ characterInfo }) => {
           <Typography gutterBottom variant="h6" component="h2" className={classes.name}>
             {`${characterInfo[0].name}`}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p" noWrap={true}>
+          <Typography variant="body2" color="textSecondary" component="p" noWrap={true} className={classes.info}>
             {`Species: ${characterInfo[0].species}`}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p" noWrap={true}>
+          <Typography variant="body2" color="textSecondary" component="p" noWrap={true} className={classes.info}>
             {`Origin: ${characterInfo[0].origin.name}`}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p" noWrap={true}>
+          <Typography variant="body2" color="textSecondary" component="p" noWrap={true} className={classes.info}>
             {`Number of episodes: ${characterInfo[0].episode.length}`}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p" noWrap={true}>
+          <Typography variant="body2" color="textSecondary" component="p" noWrap={true} className={classes.info}>
             {`Status: ${characterInfo[0].status}`}
           </Typography>
         </CardContent>

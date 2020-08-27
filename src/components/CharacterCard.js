@@ -37,6 +37,9 @@ const useStyles = makeStyles({
   },
   name: {
     color: "#E134A8"
+  },
+  info: {
+    color: "#461034"
   }
 });
 
@@ -55,7 +58,7 @@ const CharacterCard = ({ characterInfo }) => {
           <Typography gutterBottom variant="h6" component="h2" className={classes.name}>
             {`${characterInfo.name}`}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" color="textSecondary" component="p" className={classes.info}>
             {`${characterInfo.species}`}
           </Typography>
         </CardContent>
