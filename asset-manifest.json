@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/RickYMorty/static/js/main.a4d8fd56.chunk.js",
+    "main.js.map": "/RickYMorty/static/js/main.a4d8fd56.chunk.js.map",
+    "runtime-main.js": "/RickYMorty/static/js/runtime-main.e7dde3c8.js",
+    "runtime-main.js.map": "/RickYMorty/static/js/runtime-main.e7dde3c8.js.map",
+    "static/js/2.f7caf926.chunk.js": "/RickYMorty/static/js/2.f7caf926.chunk.js",
+    "static/js/2.f7caf926.chunk.js.map": "/RickYMorty/static/js/2.f7caf926.chunk.js.map",
+    "index.html": "/RickYMorty/index.html",
+    "precache-manifest.d1a317122c5b695bd181659cf02caf38.js": "/RickYMorty/precache-manifest.d1a317122c5b695bd181659cf02caf38.js",
+    "service-worker.js": "/RickYMorty/service-worker.js",
+    "static/js/2.f7caf926.chunk.js.LICENSE.txt": "/RickYMorty/static/js/2.f7caf926.chunk.js.LICENSE.txt",
+    "static/media/background2.jpg": "/RickYMorty/static/media/background2.dcae3542.jpg",
+    "static/media/logo.png": "/RickYMorty/static/media/logo.75509f2e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e7dde3c8.js",
+    "static/js/2.f7caf926.chunk.js",
+    "static/js/main.a4d8fd56.chunk.js"
+  ]
+}
