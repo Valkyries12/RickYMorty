@@ -14,6 +14,18 @@ const useStyles = makeStyles({
     overflowX: "hidden",
     overflowY: "auto",
     height: "600px",
+    '&::-webkit-scrollbar': {
+      width: "5px",
+      height: "5px",
+      backgroundColor: "transparent"
+    },
+  
+    '&::-webkit-scrollbar-thumb': {
+      backgroundColor: "#75FA69"
+    },
+    scrollbarColor: "#75FA69 transparent", /* thumb and track color */
+    scrollbarWidth: "thin"
+    
   },
   listLayout: {
     display: "flex",
