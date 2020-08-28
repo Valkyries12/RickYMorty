@@ -74,7 +74,7 @@ function App() {
   return (
     <>
       <Header />
-      <Grid container spacing={3} justify={"space-around"} style={{border: "1px solid green"}}>
+      <Grid container spacing={3} justify={"space-around"}>
         <Grid item md={5}>
           {characterInfo ? (
             <CharacterDescriptionCard  characterInfo={characterInfo}/>

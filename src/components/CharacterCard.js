@@ -52,7 +52,7 @@ const CharacterCard = ({ characterInfo }) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} xs={"10"}>
       <CardActionArea className={classes.cardActionArea}>
         <CardMedia
           className={classes.media}
