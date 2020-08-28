@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/RickYMorty/static/js/main.675e0801.chunk.js",
-    "main.js.map": "/RickYMorty/static/js/main.675e0801.chunk.js.map",
+    "main.js": "/RickYMorty/static/js/main.9192a888.chunk.js",
+    "main.js.map": "/RickYMorty/static/js/main.9192a888.chunk.js.map",
     "runtime-main.js": "/RickYMorty/static/js/runtime-main.e7dde3c8.js",
     "runtime-main.js.map": "/RickYMorty/static/js/runtime-main.e7dde3c8.js.map",
     "static/js/2.7f3cdac6.chunk.js": "/RickYMorty/static/js/2.7f3cdac6.chunk.js",
     "static/js/2.7f3cdac6.chunk.js.map": "/RickYMorty/static/js/2.7f3cdac6.chunk.js.map",
     "index.html": "/RickYMorty/index.html",
-    "precache-manifest.5b27f27cb71b05d2c1abee5a3d9f4afe.js": "/RickYMorty/precache-manifest.5b27f27cb71b05d2c1abee5a3d9f4afe.js",
+    "precache-manifest.12c509323981cc9f462804b242455018.js": "/RickYMorty/precache-manifest.12c509323981cc9f462804b242455018.js",
     "service-worker.js": "/RickYMorty/service-worker.js",
     "static/js/2.7f3cdac6.chunk.js.LICENSE.txt": "/RickYMorty/static/js/2.7f3cdac6.chunk.js.LICENSE.txt",
     "static/media/background2.jpg": "/RickYMorty/static/media/background2.dcae3542.jpg",
@@ -16,6 +16,6 @@
   "entrypoints": [
     "static/js/runtime-main.e7dde3c8.js",
     "static/js/2.7f3cdac6.chunk.js",
-    "static/js/main.675e0801.chunk.js"
+    "static/js/main.9192a888.chunk.js"
   ]
 }
