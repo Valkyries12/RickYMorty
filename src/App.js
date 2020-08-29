@@ -90,17 +90,20 @@ function App() {
           item
           md={5}
           direction="row"
+          spacing={4}
+          justify="center"
         >
-          <ul className={classes.listLayout}>
+          
           {characterList.map( (character) => {
             return (
-              
-                <li className={classes.itemLayout} key={character.id} onClick={() => handleShowCharacterInfo(character)}>
+              <Grid item xs={10} sm={5} lg={4} key={character.id} onClick={() => handleShowCharacterInfo(character)}>
+                
                   <CharacterCard characterInfo={character} />
-                </li>
+                
+              </Grid>
             )
           })}
-          </ul>
+          
         </Grid>
       </Grid>
     </>

@@ -11,7 +11,6 @@ import cursorImage from "../images/cursor.png";
 const useStyles = makeStyles({
   root: {
     minWidth: "200px",
-    maxWidth: "200px",
     backgroundColor: "transparent",
     boxShadow: "0 5px 15px 0 hsla(0,0%,100%,.4)",
     textShadow: "0.5px 0 0 #ea36af, -1px 0 0 #75fa69",
