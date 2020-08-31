@@ -4,7 +4,6 @@ import imagen from "./images/background2.jpg";
 import Header from "./components/Header";
 import Grid from "@material-ui/core/Grid";
 import CharacterCard from "./components/CharacterCard";
-import characterDescriptionCard from "./components/CharacterDescriptionCard";
 import axios from "axios";
 import CharacterDescriptionCard from "./components/CharacterDescriptionCard";
 import cursorImage from "./images/cursor.png";
@@ -43,12 +42,16 @@ function App() {
   //estados
   const [characterList, setCharacterList] = useState([]);
   const [characterInfo, setCharacterInfo] = useState();
+  const [searchBox, setSearchBox] = useState("");
+  
+  
 
   useEffect(() => {
-    getCharacters();
-  }, []);
-
-  const getCharacters = () => {
+    getCharacters(searchBox);
+    console.log(searchBox)
+  }, [searchBox]);
+//si esta filtrado busco un personaje , sino por defecto son todos
+  /*const getCharacters = () => {
     axios
       .get("https://rickandmortyapi.com/api/character/")
       .then(function (response) {
@@ -63,7 +66,30 @@ function App() {
       .then(function () {
         // always executed
       });
+  };*/
+
+  const getCharacters = (searchBox) => {
+    axios
+      .get("https://rickandmortyapi.com/api/character/")
+      .then(function (response) {
+        // handle success
+        console.log(response);
+        const filteredChars = response.data.results.filter(character => 
+          character.name.includes(searchBox)
+        )
+        //console.log(filteredChars)
+        setCharacterList(filteredChars);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+        
+      });
   };
+
 
 
   const handleShowCharacterInfo = (character) => {
@@ -73,7 +99,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header setSearchBox={setSearchBox}/>
       <Grid container spacing={3} justify={"space-around"}>
         <Grid item md={5}>
           {characterInfo ? (
