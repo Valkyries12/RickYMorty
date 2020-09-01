@@ -7,7 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import Menu from '@material-ui/core/Menu';
 import LogoImg from "../images/logo.png";
-//import SearchIcon from '@material-ui/icons/Search';
+import SearchIcon from '@material-ui/icons/Search';
+import Button from '@material-ui/core/Button';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -80,10 +81,14 @@ const useStyles = makeStyles((theme) => ({
   },
   logoImg: {
       width: "100%"
+  },
+  clearBtn: {
+    color: "#75FA69",
+    border: "1px solid #75FA69"
   }
 }));
 
-const Header = ({ setSearchBox }) => {
+const Header = ({ setSearchBox, searchBox }) => {
 
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -94,6 +99,10 @@ const Header = ({ setSearchBox }) => {
 
   const handleSearchBox = (e) => {
     setSearchBox(e.target.value)
+  }
+
+  const handleClean = () => {
+    setSearchBox("");
   }
 
   const handleProfileMenuOpen = (event) => {
@@ -160,7 +169,7 @@ const Header = ({ setSearchBox }) => {
           </div>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
-  {/*<SearchIcon />*/}
+              {<SearchIcon />}
             </div>
             <InputBase
               placeholder="Search…"
@@ -170,8 +179,13 @@ const Header = ({ setSearchBox }) => {
               }}
               inputProps={{ 'aria-label': 'search' }}
               onChange={handleSearchBox}
+              value={searchBox}
             />
+            
           </div>
+          <Button variant="outlined" size="small" color="primary" className={classes.clearBtn} onClick={handleClean}>
+              Clear
+          </Button>
           <div className={classes.grow} />
           
           

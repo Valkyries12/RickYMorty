@@ -50,23 +50,7 @@ function App() {
     getCharacters(searchBox);
     console.log(searchBox)
   }, [searchBox]);
-//si esta filtrado busco un personaje , sino por defecto son todos
-  /*const getCharacters = () => {
-    axios
-      .get("https://rickandmortyapi.com/api/character/")
-      .then(function (response) {
-        // handle success
-        console.log(response);
-        setCharacterList(response.data.results);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .then(function () {
-        // always executed
-      });
-  };*/
+
 
   const getCharacters = (searchBox) => {
     axios
@@ -99,7 +83,7 @@ function App() {
 
   return (
     <>
-      <Header setSearchBox={setSearchBox}/>
+      <Header setSearchBox={setSearchBox} searchBox={searchBox}/>
       <Grid container spacing={3} justify={"space-around"}>
         <Grid item md={5}>
           {characterInfo ? (
