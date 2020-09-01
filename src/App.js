@@ -7,6 +7,7 @@ import CharacterCard from "./components/CharacterCard";
 import axios from "axios";
 import CharacterDescriptionCard from "./components/CharacterDescriptionCard";
 import cursorImage from "./images/cursor.png";
+import NotFound from "./components/NotFound";
 
 
 const useStyles = makeStyles({
@@ -104,7 +105,7 @@ function App() {
           justify="center"
         >
           
-          {characterList.map( (character) => {
+          {characterList.length != 0 ? characterList.map( (character) => {
             return (
               <Grid item xs={10} sm={5} lg={4} key={character.id} onClick={() => handleShowCharacterInfo(character)}>
                 
@@ -112,7 +113,7 @@ function App() {
                 
               </Grid>
             )
-          })}
+          }) : <NotFound/>}
           
         </Grid>
       </Grid>
