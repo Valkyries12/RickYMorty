@@ -12,7 +12,7 @@ const useStyles = makeStyles({
 
 const NotFound =  () => {
     const classes = useStyles();
-
+    
     return (
         <Grid item container xs={10} sm={10} lg={10} justify="center">
             <Typography variant="h3" className={classes.fontColor} gutterBottom>

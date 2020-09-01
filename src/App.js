@@ -44,6 +44,7 @@ function App() {
   const [characterList, setCharacterList] = useState([]);
   const [characterInfo, setCharacterInfo] = useState();
   const [searchBox, setSearchBox] = useState("");
+  const [showCharacterInfo, setShowCharacterInfo] = useState(true);
   
   
 
@@ -79,15 +80,17 @@ function App() {
 
   const handleShowCharacterInfo = (character) => {
     setCharacterInfo([character]);
-
+    setShowCharacterInfo(true);
   }
+  
+  
 
   return (
     <>
-      <Header setSearchBox={setSearchBox} searchBox={searchBox}/>
+      <Header setSearchBox={setSearchBox} searchBox={searchBox} setShowCharacterInfo={setShowCharacterInfo}/>
       <Grid container spacing={3} justify={"space-around"}>
         <Grid item md={5}>
-          {characterInfo ? (
+          {characterInfo && showCharacterInfo ? (
             <CharacterDescriptionCard  characterInfo={characterInfo}/>
             
           ) : <div></div>

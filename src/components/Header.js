@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Header = ({ setSearchBox, searchBox }) => {
+const Header = ({ setSearchBox, searchBox, setShowCharacterInfo }) => {
 
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -103,6 +103,7 @@ const Header = ({ setSearchBox, searchBox }) => {
 
   const handleClean = () => {
     setSearchBox("");
+    setShowCharacterInfo(false);
   }
 
   const handleProfileMenuOpen = (event) => {
