@@ -6,7 +6,8 @@ import imageNotFound from "../images/notfound.png"
 
 const useStyles = makeStyles({
     fontColor: {
-        color: "white"
+        color: "white",
+        fontFamily: "Roboto"
     }
 })
 

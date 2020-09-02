@@ -90,7 +90,7 @@ function App() {
       <Header setSearchBox={setSearchBox} searchBox={searchBox} setShowCharacterInfo={setShowCharacterInfo}/>
       <Grid container spacing={3} justify={"space-around"}>
         <Grid item md={5}>
-          {characterInfo && showCharacterInfo ? (
+          {characterInfo && showCharacterInfo && characterList.length != 0 ? (
             <CharacterDescriptionCard  characterInfo={characterInfo}/>
             
           ) : <div></div>
