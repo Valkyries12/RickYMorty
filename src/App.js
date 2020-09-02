@@ -61,7 +61,7 @@ function App() {
         // handle success
         console.log(response);
         const filteredChars = response.data.results.filter(character => 
-          character.name.includes(searchBox)
+          character.name.toLowerCase().includes(searchBox.toLowerCase())
         )
         //console.log(filteredChars)
         setCharacterList(filteredChars);
