@@ -98,7 +98,8 @@ const Header = ({ setSearchBox, searchBox, setShowCharacterInfo }) => {
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleSearchBox = (e) => {
-    setSearchBox(e.target.value)
+    let onlyLetters = e.target.value.replace(/[^A-Za-z]/ig, '');  
+    setSearchBox(onlyLetters);
   }
 
   const handleClean = () => {
