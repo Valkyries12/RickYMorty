@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -88,18 +88,33 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Header = ({ setSearchBox, searchBox, setShowCharacterInfo }) => {
+const Header = ({ setFilteredCharacterList, characterList, setShowCharacterInfo }) => {
 
-  const classes = useStyles();
+  const [searchBox, setSearchBox] = useState("");
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
+  const classes = useStyles();
+
+  useEffect(() => {
+    setFilteredCharacterList(searchCharacter(characterList, searchBox));
+    // console.log(searchBox)
+  }, [searchBox]);
+
   const handleSearchBox = (e) => {
     let onlyLetters = e.target.value.replace(/[^A-Za-z]/ig, '');  
     setSearchBox(onlyLetters);
+  }
+
+  const searchCharacter = (characters, letter) => {
+    // const copyCharacterList = [...characters];
+    const filteredChars = characters.filter(character => 
+      character.name.toLowerCase().includes(letter.toLowerCase())
+    );
+    return filteredChars
   }
 
   const handleClean = () => {
@@ -153,6 +168,8 @@ const Header = ({ setSearchBox, searchBox, setShowCharacterInfo }) => {
 
     </Menu>
   );
+
+
 
   return (
     <div className={classes.grow}>

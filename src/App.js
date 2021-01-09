@@ -45,13 +45,14 @@ function App() {
   const [characterInfo, setCharacterInfo] = useState();
   const [searchBox, setSearchBox] = useState("");
   const [showCharacterInfo, setShowCharacterInfo] = useState(true);
+  const [filteredCharacterList, setFilteredCharacterList] = useState([]);
   
   
 
   useEffect(() => {
-    getCharacters(searchBox);
-    console.log(searchBox)
-  }, [searchBox]);
+    getCharacters();
+    // console.log(searchBox)
+  }, []);
 
 
   const getCharacters = (searchBox) => {
@@ -60,11 +61,13 @@ function App() {
       .then(function (response) {
         // handle success
         console.log(response);
-        const filteredChars = response.data.results.filter(character => 
+        /*const filteredChars = response.data.results.filter(character => 
           character.name.toLowerCase().includes(searchBox.toLowerCase())
-        )
+        )*/
         //console.log(filteredChars)
-        setCharacterList(filteredChars);
+        //setCharacterList(filteredChars);
+        setCharacterList(response.data.results);
+        setFilteredCharacterList(response.data.results);
       })
       .catch(function (error) {
         // handle error
@@ -76,6 +79,7 @@ function App() {
       });
   };
 
+  
 
 
   const handleShowCharacterInfo = (character) => {
@@ -87,10 +91,10 @@ function App() {
 
   return (
     <>
-      <Header setSearchBox={setSearchBox} searchBox={searchBox} setShowCharacterInfo={setShowCharacterInfo}/>
+      <Header characterList={characterList} setFilteredCharacterList={setFilteredCharacterList} setShowCharacterInfo={setShowCharacterInfo}/>
       <Grid container spacing={3} justify={"space-around"}>
         <Grid item md={5}>
-          {characterInfo && showCharacterInfo && characterList.length != 0 ? (
+          {characterInfo && showCharacterInfo && filteredCharacterList.length != 0 ? (
             <CharacterDescriptionCard  characterInfo={characterInfo}/>
             
           ) : <div></div>
@@ -108,7 +112,7 @@ function App() {
           justify="center"
         >
           
-          {characterList.length != 0 ? characterList.map( (character) => {
+          {filteredCharacterList.length != 0 ? filteredCharacterList.map( (character) => {
             return (
               <Grid item xs={10} sm={5} lg={4} key={character.id} onClick={() => handleShowCharacterInfo(character)}>
                 
