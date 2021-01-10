@@ -43,7 +43,6 @@ function App() {
   //estados
   const [characterList, setCharacterList] = useState([]);
   const [characterInfo, setCharacterInfo] = useState();
-  const [searchBox, setSearchBox] = useState("");
   const [showCharacterInfo, setShowCharacterInfo] = useState(true);
   const [filteredCharacterList, setFilteredCharacterList] = useState([]);
   
@@ -51,21 +50,15 @@ function App() {
 
   useEffect(() => {
     getCharacters();
-    // console.log(searchBox)
   }, []);
 
 
-  const getCharacters = (searchBox) => {
+  const getCharacters = () => {
     axios
       .get("https://rickandmortyapi.com/api/character/")
       .then(function (response) {
         // handle success
         console.log(response);
-        /*const filteredChars = response.data.results.filter(character => 
-          character.name.toLowerCase().includes(searchBox.toLowerCase())
-        )*/
-        //console.log(filteredChars)
-        //setCharacterList(filteredChars);
         setCharacterList(response.data.results);
         setFilteredCharacterList(response.data.results);
       })
