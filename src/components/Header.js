@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from "prop-types";
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import Menu from '@material-ui/core/Menu';
 import LogoImg from "../images/logo.png";
@@ -101,7 +101,6 @@ const Header = ({ setFilteredCharacterList, characterList, setShowCharacterInfo 
 
   useEffect(() => {
     setFilteredCharacterList(searchCharacter(characterList, searchBox));
-    // console.log(searchBox)
   }, [searchBox]);
 
   const handleSearchBox = (e) => {
@@ -122,9 +121,6 @@ const Header = ({ setFilteredCharacterList, characterList, setShowCharacterInfo 
     setShowCharacterInfo(false);
   }
 
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
@@ -135,9 +131,6 @@ const Header = ({ setFilteredCharacterList, characterList, setShowCharacterInfo 
     handleMobileMenuClose();
   };
 
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -184,7 +177,7 @@ const Header = ({ setFilteredCharacterList, characterList, setShowCharacterInfo 
             
           </IconButton>
           <div className={classes.logo}>
-            <img className={classes.logoImg} src={LogoImg} />
+            <img className={classes.logoImg} src={LogoImg} alt={"logo"} />
           </div>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -214,6 +207,12 @@ const Header = ({ setFilteredCharacterList, characterList, setShowCharacterInfo 
       {renderMenu}
     </div>
   );
+}
+
+Header.propTypes = {
+  setFilteredCharacterList: PropTypes.func.isRequired,
+  characterList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setShowCharacterInfo: PropTypes.func.isRequired,
 }
 
 export default Header;
